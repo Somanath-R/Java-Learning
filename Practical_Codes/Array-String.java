@@ -142,4 +142,100 @@ public class MatrixMultiplicationExample {
 }
 
 
+// Java Methods Example
+public class JavaMethodsExample {
+    // Method without parameters
+    public static void printHello() {
+        System.out.println("Hello, World!");
+    }
+
+    // Method with parameters
+    public static void printNumber(int number) {
+        System.out.println("The number is: " + number);
+    }
+
+    // Method with return type
+    public static int addNumbers(int a, int b) {
+        return a + b;
+    }
+
+    // Method with variable arguments
+    public static void printVarArgs(String... args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+
+    // Method overloading
+    public static void display(int a) {
+        System.out.println("Argument: " + a);
+    }
+
+    public static void display(String a) {
+        System.out.println("Argument: " + a);
+    }
+
+    public static void main(String[] args) {
+        // Calling method without parameters
+        printHello();
+
+        // Calling method with parameters
+        printNumber(10);
+
+        // Calling method with return type
+        int sum = addNumbers(5, 7);
+        System.out.println("Sum: " + sum);
+
+        // Calling method with variable arguments
+        printVarArgs("One", "Two", "Three");
+
+        // Calling overloaded methods
+        display(100);
+        display("Overloaded Method");
+    }
+}
+
+// String Methods Example
+public class StringMethodsExample {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+
+        // Length of the string
+        System.out.println("Length: " + str.length());
+
+        // Character at a specific index
+        System.out.println("Character at index 1: " + str.charAt(1));
+
+        // Substring
+        System.out.println("Substring (0, 5): " + str.substring(0, 5));
+
+        // Contains
+        System.out.println("Contains 'World': " + str.contains("World"));
+
+        // Replace
+        System.out.println("Replace 'World' with 'Java': " + str.replace("World", "Java"));
+
+        // Convert to uppercase
+        System.out.println("Uppercase: " + str.toUpperCase());
+
+        // Convert to lowercase
+        System.out.println("Lowercase: " + str.toLowerCase());
+
+        // Trim whitespace
+        String strWithWhitespace = "   Hello, World!   ";
+        System.out.println("Trimmed: '" + strWithWhitespace.trim() + "'");
+
+        // Split
+        String[] words = str.split(", ");
+        System.out.println("Split:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+
+        // String equality
+        String str2 = "Hello, World!";
+        System.out.println("Equals 'Hello, World!': " + str.equals(str2));
+    }
+}
+
 
