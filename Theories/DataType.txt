@@ -147,11 +147,53 @@ System.out.println("Match found: "+match);
 Loopings:
 To iterate the statements for a given number of times, we use the loopings:
 
-for | while | do-while
+for | while | do-while | break | continue | 
 
 public class Example{
     public static void main (String args[]){
         for (int i=0;i<5;i++){
+            System.out.println(i+"th times is"+" Hello World!");
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        int i=0;
+        while(i<5){
+            System.out.println(i+"th times is"+" Hello World!");
+            i++;
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        int i=0;
+        do{
+            System.out.println(i+"th times is"+" Hello World!");
+            i++;
+        }while(i<5);
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        for (int i=0;i<5;i++){
+            if (i==3){
+                continue;
+            }
+            System.out.println(i+"th times is"+" Hello World!");
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        for (int i=0;i<5;i++){
+            if (i==3){
+                break;
+            }
             System.out.println(i+"th times is"+" Hello World!");
         }
     }
