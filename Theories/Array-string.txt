@@ -178,4 +178,53 @@ buffer.setCharAt(0, 'H'); // buffer now contains "HdlroW ,olleH"
 // StringBuilder:
 In Java, `StringBuilder` is similar to `StringBuffer` but is not thread-safe. `StringBuilder` is used when you do not need thread safety and want better performance. Here is an example of how to define and use a `StringBuilder` in Java:
 
+// StringBuilder:
+StringBuilder builder = new StringBuilder("Hello");
 
+// Append to the builder
+builder.append(", World!"); // builder now contains "Hello, World!"
+
+// Insert into the builder
+builder.insert(5, " Java"); // builder now contains "Hello Java, World!"
+
+// Replace part of the builder
+builder.replace(6, 10, "C++"); // builder now contains "Hello C++, World!"
+
+// Delete part of the builder
+builder.delete(5, 9); // builder now contains "Hello, World!"
+
+// Reverse the builder
+builder.reverse(); // builder now contains "!dlroW ,olleH"
+
+// Convert StringBuilder to String
+String result = builder.toString(); // result is "!dlroW ,olleH"
+
+// StringBuilder methods
+int length = builder.length(); // Output: 13
+int capacity = builder.capacity(); // Output: 29 (default capacity is 16 + initial string length)
+char charAt = builder.charAt(0); // Output: '!'
+builder.setCharAt(0, 'H'); // builder now contains "HdlroW ,olleH"
+
+
+
+// Difference between String, StringBuffer, and StringBuilder:
+
+// 1. Mutability:
+// - String: Immutable. Once a String object is created, it cannot be changed.
+// - StringBuffer: Mutable. Can be modified after creation.
+// - StringBuilder: Mutable. Can be modified after creation.
+
+// 2. Thread Safety:
+// - String: Thread-safe. Safe to use in a multi-threaded environment.
+// - StringBuffer: Thread-safe. Methods are synchronized to ensure thread safety.
+// - StringBuilder: Not thread-safe. Methods are not synchronized, making it faster but unsafe in multi-threaded environments.
+
+// 3. Performance:
+// - String: Slower for concatenation and modifications due to immutability.
+// - StringBuffer: Faster than String for modifications due to mutability and thread safety.
+// - StringBuilder: Fastest for modifications due to mutability and lack of synchronization overhead.
+
+// 4. Use Case:
+// - String: Use when the value should not change or when thread safety is required without frequent modifications.
+// - StringBuffer: Use when thread safety is required and frequent modifications are needed.
+// - StringBuilder: Use when thread safety is not a concern and frequent modifications are needed.
