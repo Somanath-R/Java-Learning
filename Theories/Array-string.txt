@@ -105,3 +105,77 @@ String charString = String.valueOf('A'); // Output: "A"
 
 
 
+// StringBuffer:
+In Java, `StringBuffer` is a thread-safe, mutable sequence of characters. Unlike `String`, `StringBuffer` can be modified after it is created. Here is an example of how to define and use a `StringBuffer` in Java:
+
+available methods in StringBuffer:
+Append | Replace | Insert | Delete | reverse | length | capacity | ensureCapacity | charAt | setCharAt | substring | toString
+
+// Append the specified string to this character sequence
+buffer.append("text");
+
+// Insert the specified string at the specified position
+buffer.insert(0, "text");
+
+// Replace the characters in a substring of this sequence with characters in the specified String
+buffer.replace(0, 4, "text");
+
+// Delete the characters in a substring of this sequence
+buffer.delete(0, 4);
+
+// Reverse the sequence of characters
+buffer.reverse();
+
+// Get the length of the character sequence
+int length = buffer.length();
+
+// Get the current capacity of the buffer
+int capacity = buffer.capacity();
+
+// Ensure that the capacity is at least equal to the specified minimum
+buffer.ensureCapacity(50);
+
+// Get the character at the specified index
+char charAt = buffer.charAt(0);
+
+// Set the character at the specified index
+buffer.setCharAt(0, 'H');
+
+// Get a substring of the character sequence
+String substring = buffer.substring(0, 5);
+
+// Convert the buffer to a string
+String result = buffer.toString();
+
+StringBuffer buffer = new StringBuffer("Hello");
+
+// Append to the buffer
+buffer.append(", World!"); // buffer now contains "Hello, World!"
+
+// Insert into the buffer
+buffer.insert(5, " Java"); // buffer now contains "Hello Java, World!"
+
+// Replace part of the buffer
+buffer.replace(6, 10, "C++"); // buffer now contains "Hello C++, World!"
+
+// Delete part of the buffer
+buffer.delete(5, 9); // buffer now contains "Hello, World!"
+
+// Reverse the buffer
+buffer.reverse(); // buffer now contains "!dlroW ,olleH"
+
+// Convert StringBuffer to String
+String result = buffer.toString(); // result is "!dlroW ,olleH"
+
+// StringBuffer methods
+int length = buffer.length(); // Output: 13
+int capacity = buffer.capacity(); // Output: 29 (default capacity is 16 + initial string length)
+char charAt = buffer.charAt(0); // Output: '!'
+buffer.setCharAt(0, 'H'); // buffer now contains "HdlroW ,olleH"
+
+
+
+// StringBuilder:
+In Java, `StringBuilder` is similar to `StringBuffer` but is not thread-safe. `StringBuilder` is used when you do not need thread safety and want better performance. Here is an example of how to define and use a `StringBuilder` in Java:
+
+
