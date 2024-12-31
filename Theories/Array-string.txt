@@ -41,8 +41,67 @@ Multidimensional Array -> 2D,3D
 Matrix Array
 
 
-String :
+// String :
+In Java, a string is a sequence of characters. 
+Strings are objects in Java, which means they have methods that can perform operations on them. 
+Here is an example of how to define and initialize a string in Java:
 
+// Define a string
+String greeting = "Hello, World!";
+
+// Accessing characters in the string
+char firstChar = greeting.charAt(0); // Output: 'H'
+
+// String concatenation
+String fullName = "John" + " " + "Doe"; // Output: "John Doe"
+
+// String length
+int length = greeting.length(); // Output: 13
+
+// String comparison
+boolean isEqual = "Hello".equals("hello"); // Output: false
+
+// String methods
+String upperCaseGreeting = greeting.toUpperCase(); // Output: "HELLO, WORLD!"
+String lowerCaseGreeting = greeting.toLowerCase(); // Output: "hello, world!"
+String substring = greeting.substring(0, 5); // Output: "Hello"
+
+
+// Here are some commonly used string methods available in Java:
+// Check if the string is empty
+boolean isEmpty = greeting.isEmpty(); // Output: false
+
+// Trim whitespace from the beginning and end of the string
+String trimmedString = greeting.trim(); // Output: "Hello, World!"
+
+// Replace characters in the string
+String replacedString = greeting.replace('o', 'a'); // Output: "Hella, Warld!"
+
+// Split the string into an array of substrings
+String[] parts = greeting.split(", "); // Output: ["Hello", "World!"]
+
+// Check if the string contains a sequence of characters
+boolean containsHello = greeting.contains("Hello"); // Output: true
+
+// Check if the string starts with a specific prefix
+boolean startsWithHello = greeting.startsWith("Hello"); // Output: true
+
+// Check if the string ends with a specific suffix
+boolean endsWithWorld = greeting.endsWith("World!"); // Output: true
+
+// Convert the string to a character array
+char[] charArray = greeting.toCharArray(); // Output: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']
+
+// Format a string
+String formattedString = String.format("My name is %s and I am %d years old.", "John", 25); // Output: "My name is John and I am 25 years old."
+
+// Join multiple strings
+String joinedString = String.join(", ", "apple", "banana", "cherry"); // Output: "apple, banana, cherry"
+
+// Convert other data types to string
+String intString = String.valueOf(123); // Output: "123"
+String booleanString = String.valueOf(true); // Output: "true"
+String charString = String.valueOf('A'); // Output: "A"
 
 
 
