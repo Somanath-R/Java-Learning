@@ -1,0 +1,44 @@
+In Java, an array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed. Here is an example of how to define and initialize an array in Java:
+
+// Define an array of integers
+int[] numbers = new int[5]; // This creates an array of integers with 5 elements
+
+// Initialize the array
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;
+
+// Alternatively, you can define and initialize the array in one line
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Accessing elements of the array
+System.out.println(numbers[0]); // Output: 10
+System.out.println(numbers[1]); // Output: 20
+
+
+For Each loopings is used in array.
+
+int arr[]={33,3,4,5};  
+for(int i:arr)  System.out.println(i);  
+
+Passing the array to a method example.
+Here the array is passed as a argument to another method
+
+static void printarray(int[] ar){
+    for (int i: arr){
+        system.out.println(i)
+    }
+}
+
+int[] arr={1,2,3,4,5};
+printarray(arr)
+
+Few Other Array types includes:
+
+Multidimensional Array -> 2D,3D
+Matrix Array
+
+
+

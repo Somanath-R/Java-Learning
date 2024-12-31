@@ -1,0 +1,110 @@
+
+//Control Statements:
+These are the one that control the flow of the Statements with applying the given conditions:
+
+if | if-else | switch | Enum
+ 
+public class Example{
+    public static void main (String args[]){
+        int a=100,b=50,c=150;
+        if (a>b){
+            System.out.println("A is the greatest number");
+        }
+        else if (b>c){
+            System.out.println("B is the greatest number");
+        }
+        else{
+            System.out.println("C is the greatest number");
+        }   
+    }
+}
+
+Switc statement:
+public class Example{
+public static void main (String args[]){
+    int value=5;
+    string match="";
+
+    switch(value):
+    case 1:
+        match="One";
+        break;
+    case 2:
+        match="Two";
+        break;
+    case 3:
+        match="Three";
+        break;
+    case 4:
+        match="Four";
+        break;
+    case 5:
+        match="Five";
+        break;
+    case 6:
+        match="Six";
+        break;
+    default:
+        match="No Match";
+        break;
+}
+System.out.println("Match found: "+match);
+}
+
+
+
+Loopings:
+To iterate the statements for a given number of times, we use the loopings:
+
+for | while | do-while | break | continue | 
+
+public class Example{
+    public static void main (String args[]){
+        for (int i=0;i<5;i++){
+            System.out.println(i+"th times is"+" Hello World!");
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        int i=0;
+        while(i<5){
+            System.out.println(i+"th times is"+" Hello World!");
+            i++;
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        int i=0;
+        do{
+            System.out.println(i+"th times is"+" Hello World!");
+            i++;
+        }while(i<5);
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        for (int i=0;i<5;i++){
+            if (i==3){
+                continue;
+            }
+            System.out.println(i+"th times is"+" Hello World!");
+        }
+    }
+}
+
+public class Example{
+    public static void main (String args[]){
+        for (int i=0;i<5;i++){
+            if (i==3){
+                break;
+            }
+            System.out.println(i+"th times is"+" Hello World!");
+        }
+    }
+}
+
