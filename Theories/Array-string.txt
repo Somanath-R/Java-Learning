@@ -228,3 +228,22 @@ builder.setCharAt(0, 'H'); // builder now contains "HdlroW ,olleH"
 // - String: Use when the value should not change or when thread safety is required without frequent modifications.
 // - StringBuffer: Use when thread safety is required and frequent modifications are needed.
 // - StringBuilder: Use when thread safety is not a concern and frequent modifications are needed.
+
+// Pushing code to a GitHub repository:
+
+// 1. Initialize a new Git repository (if not already initialized)
+git init
+
+// 2. Add the files to the staging area
+git add .
+
+// 3. Commit the changes
+git commit -m "Your commit message"
+
+// 4. Add the remote repository URL
+git remote add origin https://github.com/your-username/your-repository.git
+
+// 5. Push the changes to the remote repository
+git push -u origin master
+
+// Note: If you are pushing to a branch other than master, replace 'master' with your branch name.
