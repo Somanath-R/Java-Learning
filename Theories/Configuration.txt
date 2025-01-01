@@ -1,0 +1,89 @@
+The Java Development Environment (JDE) and Java Development Kit (JDK) are both tools used in Java development, but they serve different purposes.
+
+- **JDE (Java Development Environment)**: This is a general term that refers to the environment in which Java development takes place. It includes the tools, libraries, and configurations needed to develop Java applications. This can include an Integrated Development Environment (IDE) like Eclipse or IntelliJ IDEA, as well as other tools and libraries.
+
+- **JDK (Java Development Kit)**: This is a specific set of tools provided by Oracle (or other vendors) that includes the Java compiler (javac), the Java Runtime Environment (JRE), and other tools needed to develop Java applications. The JDK is essential for compiling and running Java programs.
+
+In summary, the JDK is a specific toolkit used within the broader Java Development Environment.
+
+
+
+Difference between `public`, `static`, and other access modifiers in Java
+
+- **public**: The `public` keyword is an access modifier used for classes, methods, and variables. When a member is declared public, it means it can be accessed from any other class.
+
+- **static**: The `static` keyword is used for methods and variables. When a member is declared static, it means it belongs to the class, rather than instances of the class. Static members can be accessed without creating an instance of the class.
+
+- **private**: The `private` keyword is an access modifier used for methods and variables. When a member is declared private, it means it can only be accessed within the class it is declared.
+
+- **protected**: The `protected` keyword is an access modifier used for methods and variables. When a member is declared protected, it means it can be accessed within the same package and by subclasses.
+
+
+// Example code demonstrating public, static, private, and protected access modifiers in Java
+
+public class Example {
+    // Public variable: accessible from any other class
+    public int publicVar = 10;
+
+    // Private variable: accessible only within this class
+    private int privateVar = 20;
+
+    // Protected variable: accessible within the same package and subclasses
+    protected int protectedVar = 30;
+
+    // Default (package-private) variable: accessible within the same package
+    int defaultVar = 40;
+
+    // Static variable: belongs to the class, not instances of the class
+    static int staticVar = 50;
+
+    // Public method: accessible from any other class
+    public void publicMethod() {
+        System.out.println("Public method");
+    }
+
+    // Private method: accessible only within this class
+    private void privateMethod() {
+        System.out.println("Private method");
+    }
+
+    // Protected method: accessible within the same package and subclasses
+    protected void protectedMethod() {
+        System.out.println("Protected method");
+    }
+
+    // Default (package-private) method: accessible within the same package
+    void defaultMethod() {
+        System.out.println("Default method");
+    }
+
+    // Static method: belongs to the class, not instances of the class
+    static void staticMethod() {
+        System.out.println("Static method");
+    }
+
+    public static void main(String[] args) {
+        Example example = new Example();
+
+        // Accessing public variable and method
+        System.out.println(example.publicVar);
+        example.publicMethod();
+
+        // Accessing private variable and method (within the same class)
+        System.out.println(example.privateVar);
+        example.privateMethod();
+
+        // Accessing protected variable and method
+        System.out.println(example.protectedVar);
+        example.protectedMethod();
+
+        // Accessing default (package-private) variable and method
+        System.out.println(example.defaultVar);
+        example.defaultMethod();
+
+        // Accessing static variable and method
+        System.out.println(Example.staticVar);
+        Example.staticMethod();
+    }
+}
+

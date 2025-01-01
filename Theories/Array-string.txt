@@ -229,6 +229,44 @@ builder.setCharAt(0, 'H'); // builder now contains "HdlroW ,olleH"
 // - StringBuffer: Use when thread safety is required and frequent modifications are needed.
 // - StringBuilder: Use when thread safety is not a concern and frequent modifications are needed.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Pushing code to a GitHub repository:
 
 // 1. Initialize a new Git repository (if not already initialized)
