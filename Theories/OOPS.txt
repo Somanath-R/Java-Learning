@@ -4,7 +4,18 @@ ACCESS MODIFIERS:
 
 public: The `public` keyword is an access modifier used for classes, methods, and variables. When a member is declared public, it means it can be accessed from any other class.
 
-static: The `static` keyword is used for methods and variables. When a member is declared static, it means it belongs to the class, rather than instances of the class. Static members can be accessed without creating an instance of the class.
+static: The `static` keyword is used for methods and variables. When a member is declared static, it means it belongs to the class, rather than instances of the class. 
+   Static members can be accessed without creating an instance (object) of the class.
+
+   class Main{   //class
+    public static void sound(){  //method
+        System.out.println("Animal makes sound");
+    }
+    public static void main(String args[]){
+        
+       sound(); // since it's a static declared, no instance is created to call the sound method
+    }
+    }
 
 private: The `private` keyword is an access modifier used for methods and variables. When a member is declared private, it means it can only be accessed within the class it is declared.
 

@@ -1,0 +1,31 @@
+Exception handling in Java is a powerful mechanism that allows developers to handle runtime errors, ensuring the normal flow of the application.
+It uses five keywords: try, catch, throw, throws, and finally.
+
+- try: The block of code to monitor for exceptions.
+- catch: The block of code to handle the exception.
+- throw: Used to explicitly throw an exception.
+- throws: Used to declare an exception.
+- finally: The block of code that will always execute, regardless of whether an exception is thrown or not.
+
+Example Code:
+
+public class Main{
+    public static void main(String[] args){
+        try{
+            int get=element(new int[]{1,2,3,4,5,6,7,8});
+        }
+        catch(ArrayIndexOutOfBoundsException e){   // error name "ArrayIndexOutOfBoundsException" should be correct in defined ones
+            System.out.println("Error message:"+e.getMessage());
+        }
+        finally{
+            System.out.println("this is final block");
+        }
+    }
+    
+    static int element(int[] arr) throws ArrayIndexOutOfBoundsException {
+        if(arr.length <= 10){
+            throw new ArrayIndexOutOfBoundsException("Accessing element out of range");
+        }
+        return arr[2];
+    }
+}

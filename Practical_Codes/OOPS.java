@@ -127,4 +127,52 @@ class Lion extends Animal {
 }
 
 // interface 
+interface AnimalInterface {
+    void sound();
+    void sleep();
+}
 
+class Elephant implements AnimalInterface {
+    public void sound() {
+        System.out.println("Elephant trumpets");
+    }
+
+    public void sleep() {
+        System.out.println("Elephant is sleeping");
+    }
+
+    public static void main(String args[]) {
+        Elephant obj = new Elephant();
+        obj.sound(); // Elephant trumpets
+        obj.sleep(); // Elephant is sleeping
+    }
+}
+
+// Packages:
+// package Animal;
+public class Dog {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// package Animal;
+public class Cat {
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+// package Animal;
+import Animal.Dog;
+import Animal.Cat;
+
+public class AnimalSound {
+    public static void main(String args[]) {
+        Dog obj = new Dog();
+        obj.sound(); // Dog barks
+
+        Cat obj1 = new Cat();
+        obj1.sound(); // Cat meows
+    }
+}
