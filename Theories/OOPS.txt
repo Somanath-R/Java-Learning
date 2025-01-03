@@ -186,6 +186,48 @@ OOPS HEADING:
 
 7. Method: A function defined within a class that performs some action or operation. Methods are used to define the behavior of objects.
 
+8. constructors: Constructors are special methods in Java that are used to initialize objects.
+ They are called when an instance of a class is created. Constructors have the same name as the class and do not have a return type. 
+ 
+ There are two types of constructors in Java:
+
+1. Default Constructor: A constructor that does not take any arguments. If no constructor is defined in a class, the Java compiler automatically provides a default constructor.
+
+2. Parameterized Constructor: A constructor that takes one or more arguments to initialize the object with specific values.
+
+Here is an example demonstrating both types of constructors:
+
+class Person {
+    private String name;
+    private int age;
+
+    // Default constructor
+    public Person() {
+        this.name = "Unknown";
+        this.age = 0;
+    }
+
+    // Parameterized constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object using the default constructor
+        Person person1 = new Person();
+        person1.displayInfo(); // Output: Name: Unknown, Age: 0
+
+        // Creating an object using the parameterized constructor
+        Person person2 = new Person("John", 25);
+        person2.displayInfo(); // Output: Name: John, Age: 25
+    }
+}
+
 Java supports OOPS concepts through its syntax and standard libraries, making it a powerful language for building modular, reusable, and maintainable software.
 
 

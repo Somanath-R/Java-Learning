@@ -28,6 +28,7 @@ class MyException
     }
 }
 
+// custom error message:
 public class Main{
     public static void main(String[] args){
         try{
@@ -50,7 +51,7 @@ public class Main{
 }
 
 //custom exception: new class and constructor is created to handle custom exception 
-class AdditionalOut extends Exception{     
+class AdditionalOut extends Exception{      // why not public : only one class can be public in a file.
     public AdditionalOut (String message){
         super (message);
     }
