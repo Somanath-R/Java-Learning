@@ -1,0 +1,189 @@
+In Java, a List is an ordered collection (also known as a sequence) that allows for the storage of elements, including duplicates. 
+It provides precise control over where each element is inserted and can be accessed by their integer index (position in the list).
+It is also similar to array type
+
+Syntax:
+List <datatype> = new ArrayList<datatype>
+
+methods available:
+
+C - add()
+R - get()
+U - set()
+D - remove() clear()
+
+methods are similar to array string
+
+/**
+ * Collections and Lists in Java
+ * 
+ * Collections in Java is a framework that provides an architecture to store and manipulate a group of objects.
+ * Java Collections can achieve all the operations that you perform on data such as searching, sorting, insertion, manipulation, and deletion.
+ * 
+ * The Collection interface (java.util.Collection) and Map interface (java.util.Map) are the two main "root" interfaces of Java collection classes.
+ * 
+ * List is an ordered collection (also known as a sequence). The user of this interface has precise control over where in the list each element is inserted.
+ * The user can access elements by their integer index (position in the list), and search for elements in the list.
+ * 
+ * Commonly used List implementations:
+ * - ArrayList
+ * - LinkedList
+ * - Vector
+ * - Stack
+ * 
+ * CRUD - create - add | read - get | update - set | delete - remove clear
+ * 
+ * Commonly used methods in List interface:
+ * - add(E e): Appends the specified element to the end of this list.
+ * - add(int index, E element): Inserts the specified element at the specified position in this list.
+ * - get(int index): Returns the element at the specified position in this list.
+ * - remove(int index): Removes the element at the specified position in this list.
+ * - set(int index, E element): Replaces the element at the specified position in this list with the specified element.
+ * - size(): Returns the number of elements in this list.
+ * - isEmpty(): Returns true if this list contains no elements.
+ * - contains(Object o): Returns true if this list contains the specified element.
+ * - clear(): Removes all of the elements from this list.
+ * - iterator(): Returns an iterator over the elements in this list in proper sequence.
+ * /
+
+
+ArrayList :
+/**
+ * - ArrayList is a resizable array implementation of the List interface.
+ * - It is faster than LinkedList because it uses a dynamic array to store the elements.
+ * - It maintains the insertion order of the elements.
+ * - It allows duplicate elements.
+ * - It is non-synchronized.
+ * - It allows random access because it stores the elements in the form of an array.
+ * - It is better to use ArrayList when you have to access elements more frequently than you have to manipulate them.
+ * - It is not suitable for adding or deleting elements frequently because it requires more time to add or delete elements.
+ * - It is better to use ArrayList when you have to search for elements more frequently than you have to insert or delete them.
+ * - It is not suitable for multi-threaded applications.
+ *
+ * Commonly used methods in ArrayList class:
+ * - add(E e): Appends the specified element to the end of this list.
+ * - add(int index, E element): Inserts the specified element at the specified position in this list.
+ * - get(int index): Returns the element at the specified position in this list.
+ * - remove(Object o): Removes the first occurrence of the specified element from this list, if it is present.
+ * - remove(int index): Removes the element at the specified position in this list.
+ * - set(int index, E element): Replaces the element at the specified position in this list with the specified element.
+ * - size(): Returns the number of elements in this list.
+ * - isEmpty(): Returns true if this list contains no elements.
+ * - contains(Object o): Returns true if this list contains the specified element.
+ * - clear(): Removes all of the elements from this list.
+ * - iterator(): Returns an iterator over the elements in this list in proper sequence.
+ */
+
+Important to add the import statement "import java.util.collection" and "import java.util.ArrayList" and "import java.util.List"
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        // ArrayList<String> coll = new ArrayList<>();
+        List<String> coll = new ArrayList<>();
+        // addition
+        coll.add("Apple");
+        coll.add("ball");
+        coll.add("cat");
+        coll.add("dog");
+        coll.add("elephant");
+        System.out.println(Arrays.toString(coll.toArray())+"Deletion");
+        // deletion
+        coll.remove("cat");
+        coll.remove("dog");
+        System.out.println(Arrays.toString(coll.toArray())+" Upadtion");
+        //Updation
+        coll.set(1,"apple");
+        // coll.set(3,"CAT");
+        
+        for(String lists:coll){
+            System.out.println(lists);
+        }
+    }
+}
+
+
+LinkedList
+
+/**
+ * - LinkedList is a doubly-linked list implementation of the List interface.
+ * - It is slower than ArrayList because it uses a doubly-linked list to store the elements.
+ * - It maintains the insertion order of the elements.
+ * - It allows duplicate elements.
+ * - It is non-synchronized.
+ * - It allows random access because it stores the elements in the form of a doubly-linked list.
+ * - It is better to use LinkedList when you have to manipulate elements more frequently than you have to access them.
+ * - It is suitable for adding or deleting elements frequently because it requires less time to add or delete elements.
+ * - It is better to use LinkedList when you have to insert or delete elements more frequently than you have to search for them.
+ * - It is not suitable for multi-threaded applications.
+ *
+ * Commonly used methods in LinkedList class:
+ * - add(E e): Appends the specified element to the end of this list.
+ * - add(int index, E element): Inserts the specified element at the specified position in this list.
+ * - get(int index): Returns the element at the specified position in this list.
+ * - remove(Object o): Removes the first occurrence of the specified element from this list, if it is present.
+ * - remove(int index): Removes the element at the specified position in this list.
+ * - set(int index, E element): Replaces the element at the specified position in this list with the specified element.
+ * - size(): Returns the number of elements in this list.
+ * - isEmpty(): Returns true if this list contains no elements.
+ * - contains(Object o): Returns true if this list contains the specified element.
+ * - clear(): Removes all of the elements from this list.
+ * - iterator(): Returns an iterator over the elements in this list in proper sequence.
+ */
+
+ import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        LinkedList<String> coll = new LinkedList<>();
+        // addition
+        coll.add("Apple");
+        coll.add("ball");
+        coll.add("cat");
+        coll.add("dog");
+        coll.add("elephant");
+        System.out.println(Arrays.toString(coll.toArray())+"Deletion");
+        // deletion
+        coll.remove("cat");
+        coll.remove("dog");
+        System.out.println(Arrays.toString(coll.toArray())+" Upadtion");
+        //Updation
+        coll.set(1,"apple");
+        // coll.set(3,"CAT");
+        
+        for(String lists:coll){
+            System.out.println(lists);
+        }
+    }
+}
+
+// hashmap
+/**
+ * HashMap is a part of the Java collection framework. It stores the data in the form of key-value pairs.
+ * It is not synchronized, which means it is not suitable for multi-threaded applications.
+ * It allows null values and the null key.
+ * It does not maintain the insertion order of the elements.
+ * It allows duplicate values but not duplicate keys.
+ * It is faster than HashTable because it is not synchronized.
+ * It is better to use HashMap when you have to search for elements more frequently than you have have to insert or delete them.
+ * It is not suitable for adding or deleting elements frequently because it requires more time to add or delete elements.
+ * It is not suitable for multi-threaded applications.
+ *
+ * Commonly used methods in HashMap class:
+ * - put(K key, V value): Associates the specified value with the specified key in this map.
+ * - get(Object key): Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+ * - remove(Object key): Removes the mapping for the specified key from this map if present.
+ * - containsKey(Object key): Returns true if this map contains a mapping for the specified key.
+ * - containsValue(Object value): Returns true if this map maps one or more keys to the specified value.
+ * - size(): Returns the number of key-value mappings in this map.
+ * - isEmpty(): Returns true if this map contains no key-value mappings.
+ * - clear(): Removes all of the mappings from this map.
+ * - keySet(): Returns a Set view of the keys contained in this map.
+ * - values(): Returns a Collection view of the values contained in this map.
+ * - entrySet(): Returns a Set view of the mappings contained in this map.
+ */
