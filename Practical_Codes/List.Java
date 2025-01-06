@@ -250,7 +250,19 @@ public class LinkedListExample {
 
  * Example usage:
 
-import java.util.HashMap;
-import java.util.collection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
 
-publ
+public class Main{
+    public static void main (String args[]){
+        HashMap<String,Integer> hm = new HashMap<String,Integer> ();
+        hm.put("apple",1);
+        hm.put("Ball",2);
+        
+        for(Map.Entry m: hm.entrySet()){
+            System.out.println(m);
+        }
+            
+        }
+    }

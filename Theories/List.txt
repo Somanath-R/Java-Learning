@@ -187,3 +187,20 @@ class Main{
  * - values(): Returns a Collection view of the values contained in this map.
  * - entrySet(): Returns a Set view of the mappings contained in this map.
  */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+
+public class Main{
+    public static void main (String args[]){
+        HashMap<String,Integer> hm = new HashMap<String,Integer> ();
+        hm.put("apple",1);
+        hm.put("Ball",2);
+        
+        for(Map.Entry m: hm.entrySet()){
+            System.out.println(m);
+        }
+            
+        }
+    }
