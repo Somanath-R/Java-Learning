@@ -206,3 +206,79 @@ class Main {
       library.receiveBook(memberId, bookId);
     }
   }
+
+
+
+/*
+ * OUTPUT :
+ ================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 1
+1 Programming in Java
+2 Programming in Python
+3 Programming in Android
+continue ? Y/N y
+================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 2
+1 aka
+2 budi
+3 tono
+continue ? Y/N y
+================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 3
+id : 4
+name : Yaki
+continue ? Y/N y
+================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 2
+1 aka
+2 budi
+3 tono
+4 Yaki
+continue ? Y/N y
+================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 4
+id member : 3
+id book : 1
+continue ? Y/N y
+================================
+1. show books list
+2. show members list
+3. add member
+4. borrow book
+5. return book
+================================
+choose menu : 1
+1 Programming in Java
+2 Programming in Python
+continue ? Y/N 5
+ */
