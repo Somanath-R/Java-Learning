@@ -1,0 +1,34 @@
+Collection in Java:
+A advnaced concept in Java
+
+look at the image attached
+
+
+Collection
+
+LIST:               SET:                QUEUE:                  MAP:
+
+ArrayList           EnumSet             ArrayDeque              HashMap
+LinkedList          HashSet             PriorityQueue           TreeMap
+Stack               LinkedHashSet       LinkedList              EnumMap
+Vector              TreeSet                 -                   LinkedHashMap
+  -                    -                    -                   WeakHashMap
+
+                            
+
+
+                                                    
+                                                    
+
+                
+                                    
+                                                    
+
+                
+
+                                                    
+
+                
+                                    
+
+                                                    
