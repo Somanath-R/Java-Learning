@@ -397,6 +397,8 @@ Treeset: A TreeSet in Java is a collection that stores unique elements. It maint
 import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main{
     public static void main(String[] args){
@@ -424,3 +426,51 @@ public class Main{
 
 map: A Map in Java is a collection that stores key-value pairs. It does not allow duplicate keys.
 
+public class Main {
+    public static void main(String[] args) {
+        // Create a new HashMap
+        Map<Integer, String> map = new HashMap<>();
+        
+        // Add key-value pairs to the map
+        map.put(1, "Ram");
+        map.put(2, "Lakhan");
+        map.put(3, "Sita");
+        
+        // Display the map
+        System.out.println("Initial map: " + map);
+        
+        // Remove a key-value pair
+        map.remove(2);
+        System.out.println("After removing key 2: " + map);
+        
+        // Get a value by key
+        String value = map.get(1);
+        System.out.println("Value for key 1: " + value);
+        
+        // Check if a key exists
+        boolean hasKey = map.containsKey(3);
+        System.out.println("Map contains key 3: " + hasKey);
+        
+        // Check if a value exists
+        boolean hasValue = map.containsValue("Sita");
+        System.out.println("Map contains value 'Sita': " + hasValue);
+        
+        // Get the size of the map
+        int size = map.size();
+        System.out.println("Size of the map: " + size);
+        
+        // Check if the map is empty
+        boolean isEmpty = map.isEmpty();
+        System.out.println("Map is empty: " + isEmpty);
+        
+        // Iterate over the map
+        System.out.println("Iterating over the map:");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+        
+        // Clear the map
+        map.clear();
+        System.out.println("Map after clearing: " + map);
+    }
+}
