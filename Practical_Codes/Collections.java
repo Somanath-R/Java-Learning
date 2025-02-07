@@ -321,3 +321,106 @@ public class Main {
         }
     }
 }
+
+// PART 2:
+
+HashSet: A HashSet in Java is a collection that stores unique elements. It does not allow duplicate elements.
+ methods available in set: add, remove, contains, size, clear, isEmpty, iterator, toArray
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main{
+    public static void main(String[] args){
+        Set<Integer> s= new HashSet<>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(4);
+        s.add(5);
+        s.add(6);
+        
+        System.out.println(s);
+        s.remove(5);
+        System.out.println(s);
+        
+        // Convert the set to an array    
+        Integer [] k= new Integer [s.size()];
+        k=s.toArray(k);
+        for(int i:k){
+             System.out.println(i);
+        }
+    }
+}
+
+// Output:
+// [1, 2, 3, 4, 5, 6]
+// [1, 2, 3, 4, 6]
+// 1
+// 2
+// 3
+// 4
+// 6
+
+LinkedHashSet: A LinkedHashSet in Java is a collection that stores unique elements. It maintains the insertion order of the elements.
+import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main{
+    public static void main(String[] args){
+        Set<Integer> s= new LinkedHashSet<>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(4);
+        s.add(5);
+        s.add(6);
+        
+        System.out.println(s);
+        s.remove(5);
+        System.out.println(s);
+        
+        Integer [] k= new Integer [s.size()];
+        k=s.toArray(k);
+        for(int i:k){
+             System.out.println(i);
+        }
+        
+         // Convert the set to an array
+        
+    }
+}
+
+Treeset: A TreeSet in Java is a collection that stores unique elements. It maintains the natural ordering of the elements.
+
+import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main{
+    public static void main(String[] args){
+        Set<Integer> s= new TreeSet<>();
+        s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(4);
+        s.add(5);
+        s.add(6);
+        
+        System.out.println(s);
+        s.remove(5);
+        System.out.println(s);
+        
+        Integer [] k= new Integer [s.size()];
+        k=s.toArray(k);
+        for(int i:k){
+             System.out.println(i);
+        }
+        
+         // Convert the set to an array
+    }
+}
+
+map: A Map in Java is a collection that stores key-value pairs. It does not allow duplicate keys.
+
