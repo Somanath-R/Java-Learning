@@ -1,0 +1,249 @@
+Multithreading & Concurrency in Java
+
+1. Threads:
+    - A thread is a lightweight process.
+    - Java provides built-in support for multithreading through the `java.lang.Thread` class.
+
+    Example:
+    ```java
+    public class MyThread extends Thread {
+         public void run() {
+              System.out.println("Thread is running");
+         }
+
+         public static void main(String[] args) {
+              MyThread t1 = new MyThread();
+              t1.start(); // Start the thread
+         }
+    }
+    ```
+
+2. Runnable:
+    - Runnable interface should be implemented by any class whose instances are intended to be executed by a thread.
+
+    Example:
+    ```java
+    public class MyRunnable implements Runnable {
+         public void run() {
+              System.out.println("Runnable is running");
+         }
+
+         public static void main(String[] args) {
+              Thread t1 = new Thread(new MyRunnable());
+              t1.start(); // Start the thread
+         }
+    }
+    ```
+
+3. ExecutorService:
+    - ExecutorService is a higher-level replacement for working with threads directly.
+    - It provides a pool of threads and API for assigning tasks to it.
+
+    Example:
+    ```java
+    import java.util.concurrent.ExecutorService;
+    import java.util.concurrent.Executors;
+
+    public class MyExecutorService {
+         public static void main(String[] args) {
+              ExecutorService executor = Executors.newFixedThreadPool(2);
+              executor.submit(() -> System.out.println("Task 1"));
+              executor.submit(() -> System.out.println("Task 2"));
+              executor.shutdown();
+         }
+    }
+// Task 1
+// Task 2
+    ```
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class WorkerThread implements Runnable {
+    private String taskName;
+
+    WorkerThread(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is executing " + taskName);
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+    }
+}
+
+public class ThreadPoolExample {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(3); // 3 threads in pool
+
+        for (int i = 1; i <= 5; i++) {
+            Runnable worker = new WorkerThread("Task " + i);
+            executor.execute(worker); // Submits task for execution
+        }
+
+        executor.shutdown(); // Shuts down after all tasks are executed
+    }
+}
+
+pool-1-thread-1 is executing Task 1
+pool-1-thread-2 is executing Task 2
+pool-1-thread-3 is executing Task 3
+pool-1-thread-1 is executing Task 4
+pool-1-thread-2 is executing Task 5
+....
+
+
+--------------
+    NOTE:
+    i. threadpool (bucket of threads to run)
+   ii. ExecutorService (call all Executors)
+  iii. Executors (define how many threads with Runnable)
+   iv. threads call (constructors, run, start)
+
+--------------
+
+
+4. Synchronization:
+    - Synchronization is used to control the access of multiple threads to shared resources.
+    - The `synchronized` keyword can be used to ensure that only one thread can access a resource at a time.
+
+    Example:
+    ```java
+    public class Counter {
+         private int count = 0;
+
+         public synchronized void increment() {
+              count++;
+         }
+
+         public int getCount() {
+              return count;
+         }
+
+         public static void main(String[] args) {
+              Counter counter = new Counter();
+              Thread t1 = new Thread(() -> {
+                    for (int i = 0; i < 1000; i++) {
+                         counter.increment();
+                    }
+              });
+              Thread t2 = new Thread(() -> {
+                    for (int i = 0; i < 1000; i++) {
+                         counter.increment();
+                    }
+              });
+              t1.start();
+              t2.start();
+              try {
+                    t1.join();
+                    t2.join();
+              } catch (InterruptedException e) {
+                    e.printStackTrace();
+              }
+              System.out.println("Count: " + counter.getCount());
+         }
+    }
+    ```
+    class SharedResource {
+    synchronized void printNumbers(int n) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(n * i);
+            try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+    }
+}
+
+class MyThread extends Thread {
+    SharedResource resource;
+    MyThread(SharedResource resource) {
+        this.resource = resource;
+    }
+
+    public void run() {
+        resource.printNumbers(5);
+    }
+}
+
+public class SyncExample {
+    public static void main(String[] args) {
+        SharedResource obj = new SharedResource();
+        MyThread t1 = new MyThread(obj);
+        MyThread t2 = new MyThread(obj);
+
+        t1.start();
+        t2.start();
+    }
+}
+
+
+5. Locks:
+    - Locks provide more extensive locking operations than `synchronized` methods and statements.
+    - The `java.util.concurrent.locks.Lock` interface provides a way to lock and unlock manually.
+
+    Example:
+    ```java
+    import java.util.concurrent.locks.Lock;
+    import java.util.concurrent.locks.ReentrantLock;
+
+    public class CounterWithLock {
+         private int count = 0;
+         private Lock lock = new ReentrantLock();
+
+         public void increment() {
+              lock.lock();
+              try {
+                    count++;
+              } finally {
+                    lock.unlock();
+              }
+         }
+
+         public int getCount() {
+              return count;
+         }
+
+         public static void main(String[] args) {
+              CounterWithLock counter = new CounterWithLock();
+              Thread t1 = new Thread(() -> {
+                    for (int i = 0; i < 1000; i++) {
+                         counter.increment();
+                    }
+              });
+              Thread t2 = new Thread(() -> {
+                    for (int i = 0; i < 1000; i++) {
+                         counter.increment();
+                    }
+              });
+              t1.start();
+              t2.start();
+              try {
+                    t1.join();
+                    t2.join();
+              } catch (InterruptedException e) {
+                    e.printStackTrace();
+              }
+              System.out.println("Count: " + counter.getCount());
+         }
+    }
+    ```
+
+6. ThreadPool:
+    - A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread lifecycle overhead and resource thrashing.
+
+    Example:
+    ```java
+    import java.util.concurrent.ExecutorService;
+    import java.util.concurrent.Executors;
+
+    public class ThreadPoolExample {
+         public static void main(String[] args) {
+              ExecutorService executor = Executors.newFixedThreadPool(3);
+              for (int i = 0; i < 10; i++) {
+                    executor.submit(() -> {
+                         System.out.println("Task executed by " + Thread.currentThread().getName());
+                    });
+              }
+              executor.shutdown();
+         }
+    }
+    ```
